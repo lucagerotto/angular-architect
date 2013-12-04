@@ -1,0 +1,12 @@
+[
+ "/../../lib/generic/transliterate.js",
+ "/../../lib/jquery/jquery.slimscroll.min.js", 
+ "/css/animate.min.css",
+ "/css/icons.css",
+ "/js/functions.js",
+ "/js/app.js",
+ "/js/filters.js", 
+ "/js/controllers.js",
+ "/js/directives.js",  
+ "/js/services.js"
+]

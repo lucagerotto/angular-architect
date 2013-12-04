@@ -1,0 +1,16 @@
+<div id='confirmForm' class="admin-bg modal square fade" data-ng-show="modals.shown" data-ng-class="{in:modals.shown}">
+	<div data-ng-show="modals.title" class="modal-header itemblock-bg">
+	   <h1>{{ modals.title }}</h1>
+	</div>
+	
+	<div class="modal-body itemblock-bg" style="text-align:center">
+		<p data-ng-show="modals.message">{{ modals.message }}</p>
+		<a data-ng-show="modals.confirm!==null && modals.confirm!==undefined" class="btn btn-large btn-primary" data-ng-click="modals.confirm(modals.args)">
+		{{"core.confirmForm.button.ok"|trans}} 
+        </a>
+	</div>
+	
+	<div class="modal-footer itemblock-bg admin-bg">
+		<a class="btn innerpage" data-ng-click="modals.close()">{{"core.button.close"|trans}}</a>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+[	
+	{
+		"context"     : "@@module_name@@",
+		"description" : "@@module_name@@.sidebar.description",
+		"iconclass"   : "@@module_icon@@",
+		"url"         : "#/@@module_url@@",
+		"closet"      : { },
+		"enabled"     : true,
+		"visible"     : true,
+		"position"    : @@module_positionl@@
+	}
+]

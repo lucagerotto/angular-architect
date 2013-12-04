@@ -1,0 +1,30 @@
+{
+	"@@module_name@@" : {
+	
+		"sidebar" : {
+			"description" : "@@module_name@@"
+		},
+		
+		"breadcrumbs" : {
+			"/@@module_url@@"  : "@@module_name@@"
+		},	
+		
+	  	"title": {
+	  		"dashboard" : "@@module_name@@"
+	  	},
+	  	
+	  	"nav": {  		
+	  	},
+	  	
+	  	"field" : {	  	
+	  	},
+	  	
+	  	"placeholder" : {
+	  	},
+	  	
+	  	"error" : {
+	  		"err0001": "Esiste già una riga con lo stesso id"
+	  	}
+	  		  
+	}
+}

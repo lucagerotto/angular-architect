@@ -1,0 +1,66 @@
+{
+    "core": {
+        "button": {
+            "close": "chiudi",
+            "cancel": "annulla",
+            "exit": "esci",
+            "save": "salva",
+            "edit": "modifica",
+            "add": "aggiungi",
+            "remove": "rimuovi",
+            "delete": "elimina",
+            "move": "sposta",
+            "load": "carica",
+            "new": "nuovo",
+            "reset": "azzera",
+            "restore": "ripristina",
+            "selectAll":"seleziona tutti",
+            "unselectAll":"deseleziona tutti",
+            "clear": "svuota"
+        },
+        "meta": {
+            "description": "Amministrazione Arnoldo",
+            "author": "Arnoldo Team",
+            "title": "Mondadori Arnoldo"
+        },
+        "sidebar": {
+            "contents": "Gestione contenuti",
+            "media": "Gestione media",
+            "analytics": "Gestione social e analytics",
+            "tags": "Gestione tag",
+            "account": "Gestione account"
+        },
+        
+		"breadcrumbs" : {						
+		},	
+		
+	  	"title" : {
+		  	"environment":{
+	        	"test": "LOCALE",
+	        	"stag": "STAGING",
+	        	"prod": "PRODUZIONE"
+	        }
+	  	},
+	  	
+	  	"templateError" : {
+	  		"title" : "Errore la pagina cercata non esiste",
+	  		"message" : "Il sistema sta cercando di caricare la pagina: <code>%0</code> senza successo."
+	  	},
+	  	
+	  	"nav" : {
+			"log" : "Log"	
+	  	},
+       
+        "form" : {
+            "genericerror": "Errore nel submit del form"
+        },
+        "logout" : "Logout",
+        "confirmForm" : {
+            "areYouSure" : "Sei sicuro?",
+        	"button":{
+        		"ok": "Si",
+        		"ko": "No"
+        	}
+        }        
+    }   
+}

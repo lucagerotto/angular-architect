@@ -1,0 +1,7 @@
+<ul class="breadcrumbs">
+	<!-- gestire il caso dell'ultima briciola attiva o meno in base ad una variabile inserita nello scope dalla direttiva navigator -->
+	<li class="bc" data-ng-repeat="bc in bcs">
+       	<a href="{{bc.url}}">{{ bc.description | trans }}</a>
+       	<span class="separator"></span>        	
+   	</li>
+</ul>

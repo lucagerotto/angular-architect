@@ -1,0 +1,37 @@
+<!-- {{ notice | json }}-->
+<div class="alert alert-error" data-ng-show="!isEmpty(notice.error)">
+ 	<button type="button" class="close" data-dismiss="alert">×</button>
+	<div data-ng-repeat="(fieldName,field) in notice.error">
+		<strong data-ng-hide="fieldName=='global'">{{fieldName}}</strong> <span style="display:block" data-ng-repeat="message in field track by $index">{{message}}</span>
+	</div>
+</div>
+<div class="alert alert-warning" data-ng-show="!isEmpty(notice.warning)">
+ 	<button type="button" class="close" data-dismiss="alert">×</button>
+	<div data-ng-repeat="(fieldName,field) in notice.warning">
+		<strong data-ng-hide="fieldName=='global'">{{fieldName}}</strong> <span style="display:block" data-ng-repeat="message in field track by $index">{{message}}</span>
+	</div>
+</div>		
+<div class="alert alert-success" data-ng-show="!isEmpty(notice.success)">
+	<button type="button" class="close" data-dismiss="alert">×</button>
+	<div data-ng-repeat="(fieldName,field) in notice.success">
+		<strong data-ng-hide="fieldName=='global'">{{fieldName}}</strong> <span style="display:block"  data-ng-repeat="message in field track by $index">{{message}}</span>
+	</div>
+</div>	
+<div class="alert alert-log" data-ng-show="!isEmpty(notice.log)">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <div data-ng-repeat="(fieldName,field) in notice.log">
+        <strong data-ng-hide="fieldName=='global'">{{fieldName}}</strong> <span style="display:block" data-ng-repeat="message in field track by $index">{{message}}</span>
+    </div>
+</div>  
+<div class="alert alert-info" data-ng-show="!isEmpty(notice.info)">
+	<button type="button" class="close" data-dismiss="alert">×</button>
+	<div data-ng-repeat="(fieldName,field) in notice.info">
+		<strong data-ng-hide="fieldName=='global'">{{fieldName}}</strong> <span style="display:block"  data-ng-repeat="message in field track by $index">{{message}}</span>
+	</div>
+</div>		
+<div class="alert alert-debug" data-ng-show="!isEmpty(notice.debug)">
+	<button type="button" class="close" data-dismiss="alert">×</button>
+	<div data-ng-repeat="(fieldName,field) in notice.debug">
+		<strong data-ng-hide="fieldName=='global'">{{fieldName}}</strong> <span style="display:block"  data-ng-repeat="message in field track by $index">{{message}}</span>
+	</div>
+</div>	

@@ -1,0 +1,66 @@
+<div class="jazz-admin">
+	<div class="container-fluid">
+		<div id="toolbars" class="row-fluid">
+		</div>
+		
+		<div id="content-body" class="row-fluid">
+			<div class="padding-lateral">
+			<div class="login-form">
+                <h1 class="text-center">Login</h1>
+                <div data-ng-include="'modules/core/partials/notice.html'"></div>
+<!-- 
+	{{conf.connect | json }} 
+    {{ formLogin  | json}} 
+    text = {{user.username}}<br/>
+    formLogin.username.$valid = {{formLogin.username.$valid}}<br/>
+    formLogin.username.$error = {{formLogin.username.$error}}<br/>
+    formLogin.$valid = {{formLogin.$valid}}<br/>
+    formLogin.$error.required = {{!!formLogin.$error.required}}
+--> 
+                   
+				<form id="formLogin" name="formLogin" method="post" action="{{conf.connect[conf.authorizationEnvironment].url_connect}}{{conf.connect.url.login}}" class="form-horizontal" onsubmit="return false">
+				    <fieldset>
+<!-- 				
+					<input type="hidden" value="{{ conf.connect.area }}" name="area" />
+				    <input type="hidden" value="{{ conf.connect.applicazione }}" name="applicazione" />
+				    <input id="urlRitorno" type="hidden" value="{{ backUrl }}" name="urlRitorno" />
+				    <input type="hidden" value="" name="synchronize" />
+				    <input type="hidden" value="default" name="layout" />
+-->				    
+				    <div class="control-group" data-ng-class="{'error': formLogin.username.$error.required || formLogin.username.$error.pattern}">
+				    <div class="controls">				        
+				        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-user"></i></span>
+				            <input id="username" data-ng-model="user.username" data-ng-pattern="/[\w\.]{6,30}/" class="input-block-level" type="text" name="username" placeholder="{{ 'login.username'| trans }}" data-ng-required="user.username!=''" />
+				            <span class="help-block error" data-ng-show="formLogin.username.$error.required">Specifica uno username</span>
+				            <span class="help-block error" data-ng-show="formLogin.username.$error.pattern">solo alfanumerici . _ da 6 a 30</span>
+				         </div>
+				    </div>
+				    </div>
+				    <div class="control-group" data-ng-class="{'error': formLogin.password.$error.required}">
+				    <div class="controls">
+				    	<div class="input-prepend">
+				    		<span class="add-on"><i class="icon-lock"></i></span>
+				        	<input id="password" data-ng-model="user.password" data-ng-pattern="/[^\s]{6,20}/" class="input-block-level" type="password" name="password" placeholder="{{ 'login.password'| trans }}" data-ng-required="user.password!=''"/>
+				        	<span class="help-block error" data-ng-show="formLogin.password.$error.required">Specifica una password</span>				        	
+				        </div>
+				    </div>
+				    </div>
+				    <div class="control-group">
+				    <div class="controls">
+				        <input id="remember" type="checkbox" value="true" name="remember" data-ng-model="user.remember"  data-ng-true-value="true" data-ng-false-value="false" />
+				        <label for="remember" class="remember_me checkbox inline">{{ 'login.remember_me'| trans }}</label>
+				    </div>
+				    </div>
+				    <div class="control-group">
+				    <div class="controls">
+				        <button class="btn btn-primary" formnovalidate data-ng-disabled="formLogin.$invalid" data-ng-click="doLogin()">{{ 'login.button.login' | trans }}</button>
+				    </div>
+				    </div>
+				    </fieldset>
+				</form>
+ 				</div>
+			</div>
+		</div>
+	</div>
+</div>

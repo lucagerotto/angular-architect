@@ -1,0 +1,29 @@
+{
+  "dashboard" : {
+      	"sidebar" : {
+			"description" : "Dashboard"
+		},
+		
+		"breadcrumbs" : {
+			"/dashboard"  : "Dashboard"
+		},	
+		
+	  	"title": {
+	  		"dashboard" : "Benvenuto nella bacheca"
+	  	},
+	  	
+	  	"nav": {  		
+	  	},
+	  	
+	  	"field" : {	  	
+	  	},
+	  	
+	  	"placeholder" : {
+	  	},
+	  	
+	  	"error" : {
+	  		"err0001": ""
+	  	}
+   }
+   
+}

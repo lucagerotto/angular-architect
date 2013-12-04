@@ -1,0 +1,10 @@
+<ul class="sidebar-main sidebar-main-main">	
+	<li data-jazz-sidebar-menu data-ng-repeat="item in menu" 
+	    data-ng-class="{'sidebar-main-active active': item.selected, 'sidebar-disabled': !item.enabled , 'no-closet': !item.closet}" 
+        data-ng-show="item.visible">
+        <a href="{{item.url}}">
+            <i class="sidebar-icon {{item.iconclass}} icon-2x"></i>
+            <span>{{ item.description | trans }}</span>
+        </a>
+    </li>
+</ul>	

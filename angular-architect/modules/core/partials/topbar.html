@@ -1,0 +1,56 @@
+<div class="jazz-admin jazz-admin-topbar" data-ng-hide="commons.showPreview">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="row-1 navbar-inner">
+            <div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>			   
+			    <a class="brand" href="#"><i class="icon icon-heart"></i></a>
+				
+				<div class="nav-collapse collapse">
+					<div class="btn-group">
+						<a class="btn dropdown-toggle" data-dropdown-open="icon-caret-up" data-dropdown-close="icon-caret-down" data-toggle="dropdown">{{ commons.user.username }}</a>
+						<ul class="dropdown-menu">
+							<li><a class="nohighlight" data-ng-click="logout()"><i class="icon-signout"></i> {{ 'core.logout' | trans }}</a></li>
+						</ul>			
+					</div>
+					
+					<div class="btn-group-right">
+						<div class="btn-group">							
+					    	<span id="requestIndicator" data-ng-show="pendingRequests.length>0">
+					    		<span id="requestSpinner"></span> 
+					    		<span class="label label-info">{{pendingRequests.length}}</span>
+					    	</span>
+					    	<span class="label label-important animated bounceInRight">{{ 'core.title.environment.'+ conf.environment| trans }}</span>
+						</div>
+						<div class="btn-group" style="display:none">
+							<a class="btn dropdown-toggle" data-dropdown-open="icon-caret-up" data-dropdown-close="icon-caret-down" data-toggle="dropdown">{{ siteUrl }}</a>
+							<ul class="dropdown-menu">
+							<!-- 
+								{% set topSites=topSites(null) %}
+								{% for site in topSites %}
+									{% if siteUrl != site.siteUrl %}
+									<li><a jazz-split-line="18" href="http://{{ site.siteUrl }}">{{ site.siteUrl }}</a></li>			              
+					             	{%endif%}
+							    {% endfor %}
+							     -->
+							</ul>
+						</div>
+						<!-- 
+						<div class="btn-group">
+							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">{{ username }} <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="javascript:void(0)">asd</a></li>
+								<li><a href="javascript:void(0)">asd</a></li>
+							</ul>
+						</div>
+						 -->
+					</div>
+				</div>
+			</div>
+			
+		</div>		
+	</div>
+</div>

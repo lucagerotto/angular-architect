@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:ng="http://angularjs.org" id="ng-app" >
+
+<head>
+    <!--[if lte IE 8]>
+      <script src="lib/json/json3.min.js"></script>
+    <![endif]-->
+    
+    <!-- PER gli elementi personalizzati -->
+    <!--[if lte IE 8]>
+      <script>
+        document.createElement('ng-include');
+        document.createElement('ng-pluralize');
+        document.createElement('ng-view');
+ 
+        // Optionally these for CSS
+        document.createElement('ng:include');
+        document.createElement('ng:pluralize');
+        document.createElement('ng:view');
+      </script>
+    <![endif]-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular architect</title>
+    <!--<link rel="stylesheet" href="css/app.css"/>-->
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap-responsive.css"/>
+    <link rel="stylesheet" type="text/css" href="modules/core/css/font-awesome.css"/>
+    <!--[if IE 7]>
+    <link rel="stylesheet" type="text/css" href="modules/core/css/font-awesome-ie7.css" />
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="modules/core/css/style.css"/>
+
+ 
+<!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png"> -->
+<!-- <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png"> -->
+<!-- <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png"> -->
+<!-- <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png"> -->
+  <link rel="shortcut icon" href="modules/core/assets/favicon.ico">  
+</head>
+
+<body data-ng-controller="adminCtrl">    
+    <div class="ng-cloak" data-ng-show="commons.loggedUser"><div data-ng-include="'modules/core/partials/topbar.html'"></div></div>    
+    <div class="ng-cloak" data-ng-show="commons.loggedUser" style="float:left"><div data-ng-include="'modules/core/partials/sidebar.html'"></div></div>
+    
+    <div data-iframe-view id="content" data-ng-cloak class="{{context}}"></div>
+  
+<!--     <div data-ng-cloak class="jazz-admin"> 	      -->
+<!-- 	    <div data-waiter-all class="jazz-allwaiter" data-ng-show="commons.waiterAll"> -->
+<!-- 			<div class="jazz-imagewaiter"></div> -->
+<!-- 			<div class="jazz-progressbar"></div> -->
+<!-- 		</div>					    -->
+<!-- 		<div class="modal-backdrop" data-ng-show="modals.shown"></div> -->
+<!-- 		<div data-jazz-modal class="modal" data-ng-show="modals.shown"></div> -->
+<!--     </div>  -->
+
+    <div id="overlay"><div id="spinner"></div><div id="loadingMessages"></div></div>   
+     
+  	<!-- librerie obbligatorie  -->
+  	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.js" type="text/javascript"></script>
+	<script type="text/javascript" src="lib/jquery/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+	<script type="text/javascript" src="lib/jquery/spin.min.js" type="text/javascript"></script>
+	
+	<!-- configurazione piattaforma -->
+	<script type="text/javascript" src="functions/configuration.js"></script>
+	
+	
+	<script type="text/javascript" src="lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<!-- angular.js 1.2.0-rc.2 -->
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script> -->
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-animate.js"></script> -->
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.js"></script> -->
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-cookies.js"></script> -->
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-resource.js"></script> -->
+	<!-- angular.js 1.0.8 stable -->
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script> -->
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.js"></script> -->	
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-cookies.js"></script> -->
+	<!-- angular.js 1.1.5 unstable -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular-resource.js"></script>	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular-cookies.js"></script>
+
+	 
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js"></script> --> 
+    <!-- <script type="text/javascript" src="lib/angular/angular.js"></script> 	         -->
+	<!-- <script type="text/javascript" src="lib/angular/angular-cookies.js"></script>   -->
+	<!-- <script type="text/javascript" src="lib/angular/angular-resource.js"></script>	 -->
+	
+	 <script type="text/javascript" src="lib/angular/angular-bootstrap-prettify.js"></script>
+	 
+	<script type="text/javascript" src="lib/json/json3.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="functions/functions.js"></script>
+		
+	
+
+    <!--PER GRUNT  <script  type="text/javascript" src="/dist/<%= grunt.config.get('pkg.name') %>.min.js"></script> -->
+    
+    <!-- <script type="text/javascript" src="../../jazz_js.min.js"></script> -->
+</body>
+
+</html>

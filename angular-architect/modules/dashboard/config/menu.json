@@ -1,0 +1,12 @@
+[
+	{
+		"context"     : "dashboard",
+		"description" : "dashboard.sidebar.description",
+		"iconclass"   : "icon-dashboard",
+		"url"         : "#/dashboard",
+		"closet"      : false,
+		"enabled"     : true,
+		"visible"     : true,
+		"position"    : 10
+	}
+]

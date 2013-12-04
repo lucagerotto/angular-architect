@@ -1,0 +1,47 @@
+[	
+	{
+		"context" : "contents",
+		"description" : "_.sidebar.contents",
+		"iconclass" : "sidebar-icon-list",
+		"url" : "#/contents",
+		"closet" : false,
+		"enabled" : false,
+		"visible" : false
+	},
+	{
+		"context" : "sarebbe stato media",
+		"description" : "_.sidebar.media",
+		"iconclass" : "sidebar-icon-grap",
+		"url" : "#/media",
+		"closet" : false,
+		"enabled" : false,
+		"visible" : false
+	},
+	{
+		"context" : "analytics",
+		"description" : "_.sidebar.analytics",
+		"iconclass" : "sidebar-icon-shar",
+		"url" : "#/analytics",
+		"closet" : false,
+		"enabled" : false,
+		"visible" : false
+	},
+	{
+	    "context" : "tags",
+		"description" : "_.sidebar.tags",
+		"iconclass" : "sidebar-icon-tagg",
+		"url" : "#/tags",
+		"closet" : false,
+		"enabled" : false,
+		"visible" : false
+	},
+	{
+	    "context" : "account",
+		"description" : "_.sidebar.account",
+		"iconclass" : "sidebar-icon-user",
+		"url" : "#/account",
+		"closet" : false,
+		"enabled" : false,
+		"visible" : false
+	}
+]

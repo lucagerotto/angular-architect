@@ -1,0 +1,1259 @@
+html, body .jazz-admin{
+	background-color: #1C1C1C;
+}
+/* TOPBAR : INIZIO */
+.jazz-admin .row-1.navbar-inner .brand{
+	 padding:10px 0px;
+}
+
+.jazz-admin .row-1.navbar-inner .brand .logo{
+	 border:none;
+    margin:0 0 0 20px;
+    /*padding:0 10px;*/
+}
+.jazz-admin .navbar.navbar-inverse.navbar-fixed-top{
+	margin:0px;
+}
+.jazz-admin .row-1.navbar-inner{
+	margin:0px;
+	padding:0px;
+}
+.jazz-admin .dropdown-menu > li > a:hover,
+.jazz-admin .dropdown-menu > li > a:focus,
+.jazz-admin .dropdown-submenu:hover > a,
+.jazz-admin .dropdown-submenu:focus > a {
+  color: #ffffff;
+  text-decoration: none;
+  background-image: none;
+}
+
+.jazz-admin .dropdown-menu > li > a.nohighlight:hover,
+.jazz-admin .dropdown-menu > li > a.nohighlight:focus,
+.jazz-admin .dropdown-submenu:hover > a.nohighlight,
+.jazz-admin .dropdown-submenu:focus > a.nohighlight {
+  background:none;
+}
+
+/* TOPBAR : FINE */
+
+.jazz-admin .navbar-inverse .row-3 {
+    background:#4d4d4d;
+}
+
+.jazz-admin .navbar-fixed-top .navbar-inner {
+    border:none;
+}
+.jazz-admin .menu-editbar .btn,
+.jazz-admin .menu-editbar .btn-group,
+.jazz-admin .menu-editbar .dropdown-menu,
+.jazz-admin .navbar-fixed-top .btn,
+.jazz-admin .navbar-fixed-top .btn-group,
+.jazz-admin .navbar-fixed-top .dropdown-menu,
+.jazz-admin .menu-editbar .btn-group > .btn:first-child {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    border-radius:0;
+    border:none;
+    color:#bfbfbf;
+}
+
+.jazz-admin .navbar-fixed-top .dropdown-menu {
+    margin:0;
+    padding:0;
+}
+
+.jazz-admin .menu-editbar .btn,
+.jazz-admin .menu-editbar .btn-group,
+.jazz-admin .menu-editbar .dropdown-menu > li > a,
+.jazz-admin .navbar-fixed-top .btn,
+.jazz-admin .navbar-fixed-top .btn-group,
+.jazz-admin .navbar-fixed-top .dropdown-menu > li > a,
+.jazz-admin .menu-editbar .btn-group button,
+.jazz-admin .menu-editbar .btn-group button a,
+.jazz-admin .menu-editbar .btn-group button a i {
+    text-shadow:none;   
+    font-size:12px;
+}
+
+.jazz-admin .menu-editbar .dropdown-menu > li > a,
+.jazz-admin .navbar-fixed-top .dropdown-menu > li > a {
+    color:#727272;
+    border-top:1px solid #727272;
+    padding:0 2px;
+    margin:0 15px;
+    line-height:32px;
+    /*background-image:url('../assets/img/aa-caret-dark.png');
+    background-repeat:no-repeat;
+    background-position:right center; */
+}
+.jazz-admin .menu-editbar .dropdown-menu > li > a:hover,
+.jazz-admin .menu-editbar .dropdown-menu > li > a:focus,
+.jazz-admin .menu-editbar .dropdown-submenu:hover > a,
+.jazz-admin .menu-editbar .dropdown-submenu:focus > a,
+.jazz-admin .navbar-fixed-top .dropdown-menu > li > a:hover,
+.jazz-admin .navbar-fixed-top .dropdown-menu > li > a:focus,
+.jazz-admin .navbar-fixed-top .dropdown-submenu:hover > a,
+.jazz-admin .navbar-fixed-top .dropdown-submenu:focus > a {
+  /*background-color:none;*/
+    color:#bfbfbf;
+  /*  background-image:url('../assets/img/aa-caret.png');*/
+}
+/*Rimosso in favore dei font caret :D
+.jazz-admin .menu-editbar .dropdown-menu > li > a:hover,
+.jazz-admin .menu-editbar .dropdown-menu > li > a:focus,
+.jazz-admin .menu-editbar .dropdown-submenu:hover > a,
+.jazz-admin .menu-editbar .dropdown-submenu:focus > a,
+.jazz-admin .menu-editbar .dropdown-menu > li > button:hover,
+.jazz-admin .menu-editbar .dropdown-menu > li > button:focus,
+.jazz-admin .menu-editbar .dropdown-submenu:hover > button,
+.jazz-admin .menu-editbar .dropdown-submenu:focus > button {
+	color:white;
+    background:url('../assets/img/aa-caret.png') no-repeat right center;
+}
+*/
+
+.jazz-admin .menu-editbar .btn,
+.jazz-admin .menu-editbar .btn-group,
+.jazz-admin .navbar-fixed-top .btn,
+.jazz-admin .navbar-fixed-top .btn-group {
+    border:none;
+    border:none;
+    background:none;
+    
+    line-height:50px;
+    height:50px;
+}
+.jazz-admin .menu-editbar .btn ,
+.jazz-admin .navbar-fixed-top .btn {
+    padding:0 15px;     
+}
+.jazz-admin .menu-editbar .btn-group ,
+.jazz-admin .navbar-fixed-top .btn-group {
+    margin:5px 0;
+    padding:0;
+}
+.jazz-admin .menu-editbar .btn-group-right ,
+.jazz-admin .navbar-fixed-top .btn-group-right{
+    float: right;
+}
+.jazz-admin .menu-editbar .dropdown-menu,
+.jazz-admin .menu-editbar .btn-group.open .btn.dropdown-toggle ,
+.jazz-admin .navbar-fixed-top .dropdown-menu,
+.jazz-admin .navbar-fixed-top .btn-group.open .btn.dropdown-toggle {
+    background:#2a2929;
+    /*background:red;*/
+}
+
+
+
+/* caret della top bar e della editbar rimpiazzati con i font :) */
+.jazz-admin .menu-editbar .caret,
+.jazz-admin .navbar-fixed-top .caret {    
+    border:none;
+    background:url('../assets/img/aa-caret.png');
+    width:10px;
+    height:10px;
+    margin-top:20px;
+    margin-left:5px;
+}
+.jazz-admin .menu-editbar .caret-down,
+.jazz-admin .navbar-fixed-top .caret-down {
+    float:right;
+    border:none;
+    background:url('../assets/img/ad-caret.png') 0% 0% no-repeat;
+    width:10px;
+    height:10px;
+    margin-top:-30px;
+    margin-left:30px;
+}
+/**/
+
+
+
+/* editbar */
+.jazz-admin .menu-editbar .dropdown-menu {
+    top:60px;
+}
+
+.jazz-admin .menu-editbar .btn-group,
+.jazz-admin .menu-editbar .btn-group .btn {
+    margin:0;
+    width:120px;
+    padding:0;
+	border-radius: 4px;
+	background-color: #2A2829;
+}
+.jazz-admin .menu-editbar .btn-group .btn i{
+	color: #CBCBCB
+}
+.jazz-admin .menu-editbar .btn-group .btn span{
+	/*padding: 15px 0px;*/
+	/*font-weight: bold;*/
+	color: #CCC;
+}
+.jazz-admin .menu-editbar .btn-group {
+    background:#2a2829;
+    float:left;
+    display:inline;
+    border:none;    
+    white-space:normal;
+    /*margin-right:2px;  jazz TEAM */
+    margin: 0 1px; /* jazz TEAM */
+    height:60px;
+}
+/* ARNIOLDO TEAM
+.jazz-admin  .menu-editbar .btn-group .btn {
+    width:110px;
+    margin-right:10px;
+}
+*/
+.jazz-admin .menu-editbar .btn-group span {
+  display:block;
+  padding:22px 0;
+  line-height:1em;  
+  line-height:15px;
+  text-align:left;
+}
+
+.jazz-admin .menu-editbar .btn,
+.jazz-admin .menu-editbar .btn-group,
+.jazz-admin .menu-editbar .dropdown-menu,
+.jazz-admin .menu-editbar .btn-group > .btn:first-child {
+    color:#908e8e;  
+}
+
+.jazz-admin .menu-editbar .btn-group:hover,
+.jazz-admin .menu-editbar .btn-group:hover button,
+.jazz-admin .menu-editbar .btn-group:hover a,
+.jazz-admin .menu-editbar .btn-group.open,
+.jazz-admin .menu-editbar .btn-group.open .btn.dropdown-toggle,
+.jazz-admin .menu-editbar .btn-group.open button,
+.jazz-admin .menu-editbar .btn-group.open a,
+.jazz-admin .menu-editbar .dropdown-menu,
+.jazz-admin .menu-editbar .btn-group:hover > .btn:first-child  {
+    background:#6da1bd;
+    color:#dadada;
+}
+
+/* stap status publish */
+.jazz-admin .menu-editbar .btn-group.btn-group-stap {
+    background:#0d5e00; 
+}
+.jazz-admin .menu-editbar .btn-group.btn-group-stap span {
+    color:#05cb00;
+}
+.jazz-admin .menu-editbar .btn-group.btn-group-stap:hover,
+.jazz-admin .menu-editbar .btn-group.btn-group-stap:hover a,
+.jazz-admin .menu-editbar .btn-group.btn-group-stap.open,
+.jazz-admin .menu-editbar .btn-group.btn-group-stap.open .btn.dropdown-toggle,
+.jazz-admin .menu-editbar .btn-group.btn-group-stap.open a,
+.jazz-admin .menu-editbar .btn-group-stap .dropdown-menu {
+    color:#05cb00;
+    background-color:#0d5e00;   
+}
+
+
+/* stae status edit */
+.jazz-admin  .menu-editbar .btn-group.btn-group-stae {
+    background:#5a0000; 
+}
+.jazz-admin  .menu-editbar .btn-group.btn-group-stae span {
+    color:#ff1300;
+}
+.jazz-admin .menu-editbar .btn-group.btn-group-stae:hover,
+.jazz-admin .menu-editbar .btn-group.btn-group-stae:hover a,
+.jazz-admin .menu-editbar .btn-group.btn-group-stae.open,
+.jazz-admin .menu-editbar .btn-group.btn-group-stae.open .btn.dropdown-toggle,
+.jazz-admin .menu-editbar .btn-group.btn-group-stae.open a,
+.jazz-admin .menu-editbar .btn-group-stae .dropdown-menu {
+    color:#ff1300;
+    background:#5a0000; 
+}
+
+
+/* stad status draft */
+.jazz-admin  .menu-editbar .btn-group.btn-group-stad {
+    background:#3e3200; 
+}
+.jazz-admin  .menu-editbar .btn-group.btn-group-stad span {
+    color:#ffcc00;
+}
+.jazz-admin .menu-editbar .btn-group.btn-group-stad:hover,
+.jazz-admin .menu-editbar .btn-group.btn-group-stad:hover a,
+.jazz-admin .menu-editbar .btn-group.btn-group-stad.open,
+.jazz-admin .menu-editbar .btn-group.btn-group-stad.open .btn.dropdown-toggle,
+.jazz-admin .menu-editbar .btn-group.btn-group-stad.open a,
+.jazz-admin .menu-editbar .btn-group-stad .dropdown-menu {
+    color:#ffcc00;
+    background:#3e3200; 
+}
+
+
+/* sidebar */
+.jazz-admin.jazz-admin-sidebar {
+    float:left;
+}
+
+.jazz-admin .navbar-fixed-side,
+.jazz-admin .navbar-fixed-side-collapsed{
+	margin-bottom:0px;	
+    overflow:hidden;
+}
+
+.jazz-admin .navbar-fixed-side {
+    width:290px;
+}
+
+.jazz-admin .navbar-fixed-side-collapsed {
+    width:80px;  
+}
+
+.jazz-admin .sidebar-box {
+    float:left;
+    display:inline;
+    width:280px;
+    /*margin-top:60px;*/
+    margin-left:10px;
+    position:relative;  
+}
+
+.jazz-admin .sidebar-main {
+    margin:0;   
+}
+
+.jazz-admin .sidebar-main li {
+    background:#2a2829;
+    margin-bottom:1px;
+    list-style-type:none;
+}
+
+.jazz-admin .sidebar-main li:hover,
+.jazz-admin .sidebar-main .sidebar-main-active {
+    background:#3a5c6d;
+}
+
+.jazz-admin .sidebar-main .sidebar-main-active,
+.jazz-admin .sidebar-main .sidebar-main-active:hover {
+    background:#65a0be;
+}
+
+.jazz-admin .sidebar-main li:hover a,
+.jazz-admin .sidebar-main .sidebar-main-active a {
+    color:#dadada;
+    text-decoration:none;
+}
+
+.jazz-admin .sidebar-box a,
+.jazz-admin .sidebar-socks-head.style {
+    display:block;
+    color:#73868f;
+    font-size:13px;
+    padding:0px;
+}
+.jazz-admin .sidebar-socks-head.style {
+    height:59px;
+}
+
+.jazz-admin .sidebar-box a span,
+.jazz-admin .sidebar-socks-head.style span {
+    display:block;
+    padding:22px 0;
+    line-height:1em;    
+    line-height:15px;
+}
+
+.jazz-admin .sidebar-socks-head.style {
+    color:#dadada;
+    border-bottom:1px solid #84b3ca;
+    margin:0 10px;
+}
+
+.jazz-admin .sidebar-icon {
+    float:left;
+    display:inline;
+    margin:16px 18px;
+    width:24px;
+}
+
+.jazz-admin .blockbar-icon {
+    float:left;
+    display:inline;
+    margin:16px 18px;
+}
+
+.jazz-admin .sidebar-closet-closed {
+    position:absolute;
+    top:0;
+    left:270px;
+    width:10px;
+    background:#65a0be;
+    overflow:hidden;
+    height: 600px;
+}
+
+.jazz-admin .sidebar-closet-collapsed{
+    position:absolute;
+    top:0;
+    left:60px;
+    width:10px;
+    background:#65a0be;
+    overflow:hidden;
+}
+
+.jazz-admin .sidebar-closet-open {
+    position:absolute;
+    top:0;
+    left:60px;
+    width:220px;
+    background:#65a0be;
+    overflow:hidden;
+}
+.jazz-admin .sidebar-closet-full {
+    position:absolute;
+    top:0;
+    left:60px;
+    width:220px;
+    height:600px;
+    background:#65a0be;
+    overflow:hidden;
+}
+
+.jazz-admin .sidebar-socks {
+    width:220px;
+    height:479px;
+    position:relative;
+}
+
+.jazz-admin .sidebar-socks-inner {
+    padding:0;
+}
+
+.jazz-admin .sidebar-socks-scroll-wrapper {
+    /*padding:10px 0;*/
+    padding:0; 
+    height:480px; /* jazz TEAM per far stare il tasto sotto... */
+}
+
+.jazz-admin .sidebar-socks-scroll {
+}
+.jazz-admin .innerNav .sidebar-socks-entries ,
+.jazz-admin .sidebar-socks-entries {
+    margin:0;
+    list-style-type:none;
+}
+
+.jazz-admin .sidebar-socks-entries li {
+    margin:0 5px;   
+}
+
+.jazz-admin .sidebar-socks-entries a {
+    display:block;
+    color:#dadada;
+    font-size:13px;
+    height:32px;
+    padding:0 10px 0 10px;
+    margin:5px 0;
+}
+
+.jazz-admin .sidebar-socks-entries a:hover {
+    text-decoration:none;
+}
+
+.jazz-admin .sidebar-socks-entries i.drag-handle {
+    cursor:move;
+}
+
+.jazz-admin .sidebar-socks-entries .sidebar-socks-entries-drag a {
+    background:#7aadc8;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.27);
+    -moz-box-shadow: 0 0 5px rgba(0,0,0,.27);
+    box-shadow: 0 0 5px rgba(0,0,0,.27);
+} 
+
+.jazz-admin .sidebar-socks-entries a span {
+    display:block;
+    padding:9px 0;
+    line-height:14px;
+}
+
+.jazz-admin .sidebar-socks-entries .sidebar-socks-twolines a span {
+    padding:2px 0;
+}
+ 
+.jazz-admin .sidebar-socks-entries .sidebar-socks-entry-sel a {
+    background:#7aadc8;
+}
+
+
+.jazz-admin-sidebar .sidebar-closet .close-button {
+    position:absolute;
+    top:0;
+    right:0px;
+    width:20px;
+    height:20px;
+    background:#2f2d2e url('../assets/img/tools.png') -20px -20px;
+    padding:0;
+}
+.jazz-admin-sidebar .sidebar-closet .close-button:hover {
+    background-position:-20px -80px;
+}
+
+.jazz-admin-sidebar .sidebar-closet .collapse-button {
+    width:20px;
+    height:20px;
+    background:#2f2d2e url('../assets/img/tools.png') -20px -20px;
+    padding:0;
+}
+.jazz-admin-sidebar .sidebar-closet .collapse-button:hover {
+    background-position:-20px -80px;
+}
+
+
+
+.jazz-admin .sidebar-socks-extras {    
+    margin:0px;/*margin:-20px 0 0 0;/* jazz TEAM*/
+    list-style-type:none;
+}
+
+.jazz-admin .sidebar-socks-extras .sidebar-socks-extra-sel a {
+    background:#7aadc8;
+}
+
+
+.jazz-admin .sidebar-socks-extras li {
+    height:64px;    
+}
+
+.jazz-admin .sidebar-socks-extras li.first {
+    margin-top:20px;    
+}
+
+.jazz-admin .sidebar-socks-extras a {
+    display:block;
+    color:#dadada;
+    font-size:12px;
+    height:56px;
+    padding-right:12px;
+}
+
+.jazz-admin .extra-collapse a{
+	line-height:111%;
+}
+
+.jazz-admin .sidebar-main .extra-collapse {
+    background:none;
+}
+
+.jazz-admin .sidebar-main .extra-collapse:hover {
+    background:none;
+}
+.jazz-admin .sidebar-socks-extras .extra-drafts {
+    background:#2a2829;
+}
+
+.jazz-admin .sidebar-socks-extras .extra-add {
+    background:#215f88;
+    /*margin: 0 0 0 110px;*//* jazz ADMIN*/
+    margin:2px 2px 0px 2px;
+    padding:2px;
+}
+
+
+
+
+
+/* icone sidebar */
+/* togli un ulteriore -10px al multiplo di 60 */
+.jazz-admin .menu-editbar .sidebar-icon {
+    width:40px; 
+}
+
+
+.sidebar-socks-entries .icon-white.icon-exclamation-sign{
+    margin:9px 8px 0 0;
+    float:left;
+}
+
+.jazz-admin .extra-drafts .sidebar-socks-icon-drafts {
+    line-height:60px;
+    text-align:center;
+    color:black;
+    font-style:normal;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* menu blockbar */
+.jazz-admin .menu-blockbar-container {
+  position: relative;
+    padding: 0 30px;
+  height:60px;
+}
+
+.jazz-admin .menu-blockbar {
+    margin:0;
+    float:left;
+    display:inline;
+    z-index:2000;
+    width: 100%;
+    height:60px;
+}
+
+.menu-blockbar-item,
+.jazz-admin .menu-blockbar li.menu-blockbar-item {
+    float:left;
+    display:inline;
+    list-style-type:none;
+    width:160px;
+    height:60px;
+    position:relative;
+}
+
+.menu-blockbar-item a,
+.jazz-admin .menu-blockbar li.menu-blockbar-item a {
+    display:block;
+    height:60px;
+    width:160px;
+    color:#828282;
+    font-size:13px;
+    text-decoration:none;
+    background:none;
+}
+
+li.menu-blockbar-item span,
+.jazz-admin .menu-blockbar li.menu-blockbar-item span {
+    display:block;
+    line-height:14px;
+    padding:23px 0;
+    width:150px;
+}
+
+li.menu-blockbar-sel a,
+.jazz-admin .menu-blockbar li.menu-blockbar-sel a {
+    background:#818181 url('../assets/img/brackets.png') no-repeat center left;
+    color:#e7e7e7;
+}
+
+.menu-blockbar-prev,
+.menu-blockbar-next {
+    /*
+    float:left;
+    display:inline;
+    */
+    position: absolute;
+    top:0;
+    width:30px;
+    height:60px;
+    background:url('../assets/img/tools.png') -435px 0;
+    z-index:1000;
+}
+    
+.menu-blockbar-next {
+    background-position:-495px 0;
+    right:0;
+}
+.menu-blockbar-prev{
+    left:0px;
+}   
+.menu-blockbar-prev.disabled,
+.menu-blockbar-next.disabled{
+    display: none;
+}   
+.menu-blockbar-prev:hover {
+    background-position:-435px -60px;
+}
+    
+.menu-blockbar-next:hover {
+    background-position:-495px -60px;
+}
+
+.jazz-admin .navbar-inverse .navbar-inner-collapsed.jazz-draftbar {
+    padding:0px;
+    margin:60px 0 0 80px;
+    width:100%;
+    height:60px;
+}
+
+.jazz-admin .navbar-inverse .navbar-inner.jazz-draftbar{
+    padding:0px;
+    margin:60px 0 0 290px;
+    width:100%;
+    height:60px;
+}
+
+.jazz-admin .navbar-inverse .navbar-inner-collapsed.jazz-draftbar .middle-button,
+.jazz-admin .navbar-inverse .navbar-inner.jazz-draftbar .middle-button{
+    margin-left: 10px;
+    float:left;
+}
+
+.jazz-admin .navbar-inverse .navbar-inner-collapsed.jazz-blockbar{
+    padding:0px;
+    margin:0px 0 0 80px;
+    height:60px;
+}
+.jazz-admin .navbar-inverse .navbar-inner.jazz-blockbar{
+    padding:0px;
+    margin:0px 0 0 290px;
+    height:60px;
+}
+/* jazz TEAM aggiunta per centrare le scritte nei pulsanti della editbar */
+
+.jazz-admin .menu-editbar .btn,
+.jazz-admin .menu-editbar .btn-group {
+    height:60px;
+}
+
+.jazz-admin .sidebar-socks-entries li span.home{
+    float:left;
+    margin:0px 7px;
+    padding:0px;
+    color:#dadada;
+}
+.jazz-admin .sidebar-socks-entries li a.buttonback{
+    float:left;
+    margin:0px 7px;
+    padding:0px;
+}
+
+.jazz-admin.jazz-admin-topbar{
+    height:64px;
+}
+/*
+.jazz-admin.jazz-admin-topbar{
+    position:fixed;
+    top:0px;
+    left:0px;
+    z-index:1099;/* sotto la sidebar * /
+}
+*/
+.jazz-admin .navbar-fixed-top .btn,
+.jazz-admin .navbar-fixed-top .btn-group a{
+    background:none;
+}
+
+.jazz-admin .navbar-inverse .navbar-inner-collapsed.jazz-draftbar .right-button,
+.jazz-admin .navbar-inverse .navbar-inner.jazz-draftbar .right-button{
+    margin-left: 10px;
+    float:left;
+}
+
+.jazz-admin  .menu-editbar .right-button .btn-group ul > li > span {
+  display:block;
+  text-align:left;
+  color: #888;
+  padding: 0px 0px 10px 17px;
+  font-size: 12px;
+  padding: 0 2px;
+  margin: 0 15px;
+  line-height: 32px;  
+}
+
+.jazz-admin .alert.alert-log{
+  color: rgb(120,120,120);
+  background-color: rgb(240,240,240);
+  border:1px solid rgb(190,190,190);
+}
+
+
+div#overlay {
+	display: block;
+	z-index: 10000;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+	opacity:1;
+	/*padding-top:25%;
+	padding-bottom:25%;*/
+}
+div#overlay .verticalCenter{
+	position:relative;
+	top:50%;
+}
+div#spinner{
+	display: block;
+	z-index: 10001;
+	position: relative;
+	top: 50%;
+	text-align: center;
+}
+
+#requestIndicator{
+	position: relative;
+}
+
+#requestSpinner{
+	position: absolute;
+	left: -14px;
+	top: 8px;
+}
+
+div#loadingMessages{
+	z-index: 10002;
+	position: relative;
+	top: 50%;
+	text-align: center;
+	/*font-size:20px;
+	color:#eee;*/
+	margin-top:30px;
+}
+#content{ overflow:hidden;}
+#content .container-fluid:first-child,
+body.iframeView  .container-fluid:first-child{
+    overflow:hidden;
+	padding:0px;	
+}
+.padding-lateral{
+	padding-left:20px;
+	padding-right:20px
+}
+
+#content, #content .jazz-admin,
+body.iframeView, body.iframeView .jazz-admin{
+	background-color:#fff;
+}
+
+/* TOOLBAR: inizio */
+
+#toolbars{
+	/*position:relative;*/
+	/*overflow:hidden;*/
+	/*background:#1c1c1c;*/
+	background:#888;	
+}
+
+#toolbars div{
+	line-height:0px;
+	font-size:0px;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+
+
+.jazz-admin .btn-toolbar{
+	float:left;
+	/*height:60px; altrimenti se non ho pulsanti rimane la barra visibile*/ 
+}
+@media (max-width: 767px){
+	.jazz-admin .btn-toolbar .btn-group .btn span,
+	.jazz-admin .btn-toolbar .btn span {
+	    display: none;
+	}
+	
+	.jazz-admin .btn-toolbar .menu-editbar .btn-group button i.toolbar-icon, 
+	.jazz-admin .btn-toolbar .menu-editbar .btn-group button:hover i.toolbar-icon, 
+	.jazz-admin .btn-toolbar .menu-editbar .btn-group > button.btn:first-child i.toolbar-icon, 
+	.jazz-admin .btn-toolbar .menu-editbar .btn-group > button.btn:first-child:hover i.toolbar-icon, 
+	.jazz-admin .btn-toolbar .menu-editbar .btn-group a i.toolbar-icon, 
+	.jazz-admin .btn-toolbar .menu-editbar .btn-group a:hover i.toolbar-icon, 
+	.jazz-admin .btn-toolbar .menu-editbar .btn-group > a.btn:first-child i.toolbar-icon, 
+	.jazz-admin .btn-toolbar .menu-editbar .btn-group > a.btn:first-child:hover i.toolbar-icon
+    .jazz-admin .btn-toolbar .btn-group .btn i.toolbar-icon,
+    .jazz-admin .btn-toolbar .btn i.toolbar-icon{
+        margin:12px 16px;
+    }
+    .jazz-admin .btn-toolbar .btn-group .btn-group,
+    .jazz-admin .btn-toolbar .btn-group button.btn,
+    .jazz-admin .btn-toolbar button.btn{
+        width:50px
+    }
+	
+}
+.jazz-admin .blockbar{
+	width:100%;
+}
+.jazz-admin .menu-editbar .btn-group,
+.jazz-admin .menu-editbar .btn-group button.btn.dropdown-toggle,
+.jazz-admin .menu-editbar .btn-group a.btn.dropdown-toggle{
+	height:50px;
+	border-radius:4px;
+}
+.jazz-admin .menu-editbar .btn-group.open,
+.jazz-admin .menu-editbar .btn-group.open button.btn.dropdown-toggle,
+.jazz-admin .menu-editbar .btn-group.open a.btn.dropdown-toggle{
+	border-bottom-radius:0px;
+}
+.jazz-admin .menu-editbar .btn-group.open ul.dropdown-menu{
+	border-radius:4px;
+	border-top-left-radius:0px;
+	top:46px;
+} 
+.jazz-admin #toolbars .menu-editbar .btn-group{
+	margin: 5px 2px;
+}
+ 
+.jazz-admin .status{
+	height:60px;
+	margin:0px;
+	width:120px;
+}
+.jazz-admin .status span{
+	color:#dadada;
+	padding: 24px 10px;
+	line-height: 120%;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0px;
+	float: left;
+	width:100%;
+	text-align:center;	
+}
+
+.jazz-admin .status.status-published{
+	background-color:#77b34f;
+}
+.jazz-admin .status.status-editing{
+	background-color:#832C2C;
+}
+.jazz-admin .status.status-draft{
+	background-color:#e0dc5b;
+}
+.jazz-admin .status.status-draft span{
+	color:#333333;
+}
+ 
+.jazz-admin .menu-editbar .btn-group button i.toolbar-icon,
+.jazz-admin .menu-editbar .btn-group button:hover i.toolbar-icon,
+.jazz-admin .menu-editbar .btn-group > button.btn:first-child i.toolbar-icon,
+.jazz-admin .menu-editbar .btn-group > button.btn:first-child:hover i.toolbar-icon,
+.jazz-admin .menu-editbar .btn-group a i.toolbar-icon,
+.jazz-admin .menu-editbar .btn-group a:hover i.toolbar-icon,
+.jazz-admin .menu-editbar .btn-group > a.btn:first-child i.toolbar-icon,
+.jazz-admin .menu-editbar .btn-group > a.btn:first-child:hover i.toolbar-icon{
+	/*float:left;*/ 
+   margin:12px 8px;
+}
+
+.jazz-admin .menu-editbar .btn-group button i.toolbar-icon.pull-right+span,
+.jazz-admin .menu-editbar .btn-group button:hover i.toolbar-icon.pull-right+span,
+.jazz-admin .menu-editbar .btn-group > button.btn:first-child i.toolbar-icon.pull-right+span,
+.jazz-admin .menu-editbar .btn-group > button.btn:first-child:hover i.toolbar-icon.pull-right+span,
+.jazz-admin .menu-editbar .btn-group a i.toolbar-icon.pull-right+span,
+.jazz-admin .menu-editbar .btn-group a:hover i.toolbar-icon.pull-right+span,
+.jazz-admin .menu-editbar .btn-group > a.btn:first-child i.toolbar-icon.pull-right+span,
+.jazz-admin .menu-editbar .btn-group > a.btn:first-child:hover i.toolbar-icon.pull-right+span{
+	margin-left:10px;
+}
+/* TOOLBAR: fine */
+
+/*  CONTENITORE ng-view : INIZIO */
+/* serve per far si che l'overlay dei datepiker scorra con la pagina */
+#content-body{
+	overflow:auto;
+	position:relative;
+}
+#content-body-overlay{
+    width:100%;
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:500;
+    background: rgba(0,0,0,0.7);
+    display:none;   
+}
+/*  CONTENITORE ng-view : FINE */
+
+
+/*  NAV SIDEBAR + BREADCRUMBS : INIZIO */
+.jazz-admin .breadcrumbs {
+	margin:0px;
+	padding:0px;
+}
+.jazz-admin .breadcrumbs .bc{
+	text-align:center;
+	color:#000000;
+	/*height:30px;*/
+	margin:0px;
+	/*padding:8px 0px 0px 0px;*/
+	list-style:none;
+	display:block;
+	position:relative;
+	border-bottom:1px solid #000000;
+	border-radius:6px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);	
+}
+.jazz-admin .breadcrumbs .bc a,
+.jazz-admin .breadcrumbs .bc a:hover{
+	color:#000000;
+	text-decoration: none;
+	/*height:30px;*/
+	padding: 8px 4px;	
+}
+.jazz-admin .breadcrumbs .bc .separator{
+	/*position: absolute; top: 38px;*/
+	position:relative;
+	float:left;
+	top: 0px;
+	left: 50%;
+	display: inline-block;
+	border-right: 6px solid transparent;	
+	border-left: 6px solid transparent;
+	border-top: 6px solid #000000;	
+}
+
+.jazz-admin .innerNav ul{
+	margin: 10px 0 0 0px;
+	padding: 0px;
+}
+.jazz-admin .innerNav li{
+	list-style:none;
+	line-height:100%;
+	padding:0px;
+	margin:0px 5px;
+	height:30px;
+}
+.jazz-admin .innerNav li a{
+	color:#000000;
+	text-decoration: none;
+	display: block;
+	font-size: 13px;
+	height: 32px;
+	padding: 0 10px 0 10px;
+	margin: 5px 0;	
+}
+
+.jazz-admin .innerNav li a:visited {
+	color:#000000;
+	/*background:#7aadc8;*/
+}
+.jazz-admin .innerNav li a:hover,
+.jazz-admin .innerNav li a.active {
+	color:#dadada;
+	background:#7aadc8;
+}
+
+.jazz-admin .innerNav li a span{
+	padding:9px 0px;
+}
+
+.jazz-admin .menu-editbar button:hover i,
+.jazz-admin .menu-editbar a:hover i {
+	background-position-y: -60px;
+}
+/* NAV SIDEBAR + BREADCRUMBS : FINE */
+.jazz-admin .menu-editbar .btn.disabled,
+.jazz-admin .menu-editbar .btn-group.disabled,
+.jazz-admin .menu-editbar .dropdown-menu.disabled,
+.jazz-admin .menu-editbar .btn-group.disabled > .btn:first-child,
+.jazz-admin .menu-editbar .btn[disabled],
+.jazz-admin .menu-editbar .btn-group[disabled],
+.jazz-admin .menu-editbar .dropdown-menu[disabled],
+.jazz-admin .menu-editbar .btn-group[disabled] > .btn:first-child {
+    background:#acacac;    
+    opacity:0.4;  
+    color:#646262;
+    cursor: default;
+	filter: alpha(opacity=40);
+	-webkit-box-shadow: none;
+	   -moz-box-shadow: none;
+	        box-shadow: none;
+}
+
+.jazz-admin .menu-editbar .btn-group.disabled button,
+.jazz-admin .menu-editbar .btn-group[disabled] button,
+.jazz-admin .menu-editbar .btn-group.disabled button:hover,
+.jazz-admin .menu-editbar .btn-group[disabled] button:hover,
+.jazz-admin .menu-editbar .btn-group.disabled > button.btn:first-child,
+.jazz-admin .menu-editbar .btn-group[disabled] > button.btn:first-child,
+.jazz-admin .menu-editbar .btn-group.disabled > button.btn:first-child:hover,
+.jazz-admin .menu-editbar .btn-group[disabled] > button.btn:first-child:hover{
+	opacity:1.0;
+}
+/*
+.jazz-admin .menu-editbar .btn-group.disabled button i,
+.jazz-admin .menu-editbar .btn-group[disabled] button i,
+.jazz-admin .menu-editbar .btn-group.disabled button:hover i,
+.jazz-admin .menu-editbar .btn-group[disabled] button:hover i,
+.jazz-admin .menu-editbar .btn-group.disabled > button.btn:first-child i,
+.jazz-admin .menu-editbar .btn-group[disabled] > button.btn:first-child i,
+.jazz-admin .menu-editbar .btn-group.disabled > button.btn:first-child:hover i,
+.jazz-admin .menu-editbar .btn-group[disabled] > button.btn:first-child:hover i,
+.jazz-admin .menu-editbar .btn-group.disabled a i,
+.jazz-admin .menu-editbar .btn-group[disabled] a i,
+.jazz-admin .menu-editbar .btn-group.disabled a:hover i,
+.jazz-admin .menu-editbar .btn-group[disabled] a:hover i,
+.jazz-admin .menu-editbar .btn-group.disabled > a.btn:first-child i,
+.jazz-admin .menu-editbar .btn-group[disabled] > a.btn:first-child i,
+.jazz-admin .menu-editbar .btn-group.disabled > a.btn:first-child:hover i,
+.jazz-admin .menu-editbar .btn-group[disabled] > a.btn:first-child:hover i{
+	background-position-y: 0px;
+}
+*/
+.jazz-admin hr {
+	margin:10px 0px;
+}
+.jazz-admin .alert{
+	margin-bottom:10px;
+}
+.jazz-admin .alert div{
+	overflow-x:hidden;
+}
+.jazz-admin .alert.alert-debug{
+  color: #787878;
+  background-color: #F0F0F0;
+  border:1px solid #BEBEBE;
+}
+
+.jazz-admin .validation{
+	color:#e9322d;
+}
+
+.jazz-admin textarea.ng-invalid-validation,
+.jazz-admin input[type="text"].ng-invalid-validation, 
+.jazz-admin input[type="password"].ng-invalid-validation, 
+.jazz-admin input[type="datetime"].ng-invalid-validation, 
+.jazz-admin input[type="datetime-local"].ng-invalid-validation,
+.jazz-admin input[type="date"].ng-invalid-validation, 
+.jazz-admin input[type="month"].ng-invalid-validation, 
+.jazz-admin input[type="time"].ng-invalid-validation, 
+.jazz-admin input[type="week"].ng-invalid-validation, 
+.jazz-admin input[type="number"].ng-invalid-validation, 
+.jazz-admin input[type="email"].ng-invalid-validation,
+.jazz-admin input[type="url"].ng-invalid-validation, 
+.jazz-admin input[type="search"].ng-invalid-validation, 
+.jazz-admin input[type="tel"].ng-invalid-validation, 
+.jazz-admin input[type="color"].ng-invalid-validation, 
+.jazz-admin .uneditable-input.ng-invalid-validation {
+	 border-color: #e9322d;
+  -webkit-box-shadow: 0 0 6px #f8b9b7;
+     -moz-box-shadow: 0 0 6px #f8b9b7;
+          box-shadow: 0 0 6px #f8b9b7;
+}
+
+.jazz-admin form.validationColors input:valid, 
+.jazz-admin form.validationColors textarea:valid, 
+.jazz-admin form.validationColors select:valid {
+	border-color: #3D6;
+	-webkit-box-shadow: 0 0 6px #51FC10;
+	-moz-box-shadow: 0 0 6px #f8b9b7;
+	box-shadow: 0 0 6px #C5FF9E;
+	border-left-width: 10px;
+}
+.jazz-admin form.validationColors input:invalid, 
+.jazz-admin form.validationColors textarea:invalid, 
+.jazz-admin form.validationColors select:invalid {
+ 	border-color: #e9322d;
+  	-webkit-box-shadow: 0 0 6px #f8b9b7;
+    -moz-box-shadow: 0 0 6px #f8b9b7;
+    box-shadow: 0 0 6px #f8b9b7;
+	border-left-width: 10px;
+}
+
+/* tools */
+.jazz-admin .sidebar-socks-icon {
+    width:22px;
+    height:32px;
+    float:left;
+    display:inline;
+    background:green;
+    background:url('../assets/img/tools.png');
+}
+
+.jazz-admin .sidebar-socks-icon-clos {
+    background-position:-25px -15px;
+}
+
+.jazz-admin .sidebar-socks-icon-list {
+    background-position:-83px -15px;
+}
+
+.jazz-admin .sidebar-socks-icon-home {
+    background-position:-143px -15px;
+}
+
+.jazz-admin .sidebar-socks-icon-drafts {
+    width:60px;
+    height:60px;
+    background-position:-360px 0px;
+}
+
+.jazz-admin .sidebar-socks-icon-draf {
+    float: left;
+    background-position: -655px -15px;
+}
+.jazz-admin .sidebar-socks-icon-arrow-right{
+    float:right;
+    background-position: 133px -15px;
+}
+.jazz-admin .sidebar-socks-icon-arrow-left{
+    float:right;
+    background-position: 755px -15px;
+}
+.jazz-admin .sidebar-socks-icon-add {
+	width: 40px;
+	height: 60px;
+	background-position: -310px 0px;
+}
+
+.jazz-admin .row-fluid [class*="span"].noMarginLeft{
+	margin-left:0px;
+}
+
+
+
+
+/* WIDGETS - autocomplete new item*/
+.jazz-admin .dropdown-menu > .active > a.newItem{
+	color:#ee0000;
+	text-decoration: none;
+  	background: none;  
+}
+.jazz-admin .dropdown-menu > .active > a.newItem:hover,
+.jazz-admin .dropdown-menu > .active > a.newItem:focus {
+  color: #ee0000;
+  text-decoration: none;
+  background: #ddd;  
+}
+
+
+/* MODALE */
+.jazz-admin .modal {
+	position:fixed;
+    z-index: 10000001;
+}
+
+.jazz-admin .modal.fade.in {
+    top:20%;
+}
+.jazz-admin .modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /*z-index: 1140;*/
+  z-index: 10000000;
+  background-color: #000000;
+}
+
+.jazz-admin .modal-backdrop.fade {
+  opacity: 0;
+}
+
+.jazz-admin .modal-backdrop,
+.jazz-admin .modal-backdrop.fade.in {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+
+@-moz-document url-prefix() {
+	.jazz-admin .sidebar-icon {
+	    margin: 18px;
+	}
+	.jazz-admin .sidebar-icon[class^="icon-"],
+	.jazz-admin .sidebar-icon[class*=" icon-"]{
+		line-height: 88%;
+	}
+	.sidebar-icon.icon-check-empty.icon-stack-base{
+		line-height: 50%;
+	}
+}

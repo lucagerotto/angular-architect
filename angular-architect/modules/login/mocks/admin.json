@@ -1,0 +1,46 @@
+{
+	"username": "simmia",
+	"password": "ricorda",	
+	"FLAG_COGNOME_PUBBLICO": "N",
+    "FLAG_DATA_DI_NASCITA_PUBBLICO": "N",
+    "DATA_ULTIMAMODIFICA_CP1": "",
+    "DATA_ULTIMAMODIFICA_CP2": "",
+    "FLAG_MODIFICA_EMAIL": "N",
+    "SESSO": "M",
+    "DATA_ULTIMAMODIFICA_TEC": "",
+    "FLAG_SESSO_PUBBLICO": "N",
+    "NOME": "Luca",
+    "FLAG_AGGIORNAMENTO_FB": "N",
+    "NUOVA_EMAIL": "",
+    "ID": "6040",
+    "DATA_ULTIMAMODIFICA_FB": "",
+    "FLAG_BLOCCO": "N",
+    "ID_AREA": "3",
+    "EMAIL": "luca.gerotto@gmail.com",
+    "FLAG_ABILITATO": "S",
+    "FLAG_NOME_PUBBLICO": "N",
+    "DATA_DI_NASCITA": "08/03/1976",
+    "TEC": "S",
+    "ID_FB": "",
+    "CP2": "N",
+    "CP1": "N",
+    "COGNOME": "Gerotto",
+    "CODICE_BLOCCO": "",
+    "DISPLAYNAME": "simmia",
+    "DATA_ULTIMAMODIFICA": "Thu Apr 11 09:49:39 CEST 2013",
+    "USERNAME": "simmia",
+    "cookieValue": "6040*simmia*c37a0f4dcefd2624e3bc1a117bd49dff",    
+	
+	"role"    : [ "ROLE_ADMIN" ],
+	
+	"policy"  : [
+		"/dashboard",
+		"/login",
+		"/logout"
+	],
+	
+	"oldCookie":{
+		"value": "6040*simmia*c37a0f4dcefd2624e3bc1a117bd49dff"
+	}
+	
+}

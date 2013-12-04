@@ -1,0 +1,33 @@
+{
+    "modules"   : [],
+    "language"  : "it",
+    "languages" : ["it"],
+    "log": {
+        "level"     : 0,
+        "whiteList" : ".*"
+    },
+    "server_name": "http://angular-architect.it",
+    "initUrl": null,
+    "serverContext": "/",
+    "backendPath": "",
+    "authorizationEnvironment": "test",
+    "environments": {
+        "test" : "test",
+        "prod" : "prod",
+        "stag" : "stag"
+    },
+    "environment": "test",
+    "cookie" : {
+        "authorization" : {
+            "name" : "session"
+        },
+        "backUrl":{
+            "name" : "backUrl"
+        },
+        "settings":{
+            "name"   : "settings",
+            "domain" : ".angular-architect.it",
+            "ttl"    : -1
+        }
+    }
+}
