@@ -1,5 +1,6 @@
 [
  "/css/style.css",
  "/js/app.js",
+ "/js/services.js",
  "/js/controllers.js"
 ]

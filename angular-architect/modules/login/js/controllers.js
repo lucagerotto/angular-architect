@@ -4,15 +4,22 @@ angular.module('login').controller('loginCtrl', ['$scope', '$rootScope', '$http'
 		log.debug('Login Controller');
 		//$scope.commons = commons.get();
 		
+		var sitePath = getModulePath('site');
+		var loginPath = getModulePath('login');
+		
+		$scope.loginFormTemplate = ((sitePath=='') ? loginPath+'login' : sitePath+'site')+'/partials/loginForm.html';
+		
 		$scope.backUrl = $cookies.backUrl;
 		
 		$scope.user = { "username":"", "password":"", "remember":false};
 		
 		$scope.doLogin = function(){
 			log.debug("Tentativo di login....");
-			//startSpinner();
-			authentication.login( $scope.user.username, $scope.user.password , $scope.user.remember);
-			//authentication.login( $cookies[cookie.authorization.name] );
+			authentication.login( $scope.user.username, $scope.user.password , $scope.user.remember).then(function(path){
+				if (path!=null){
+					$location.path(path);	
+				}				
+			});
 		};
 	
 	}

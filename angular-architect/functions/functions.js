@@ -174,6 +174,7 @@ function isConteined( obj , arr ) {
 	var applicationContext = "/";//contesto applicazione web (virtual-host)	
 	var applicationPath = "../"; //percorso relativo a index.html dove trovare i moduli specifici dell'applicazione
    	var conf = {
+	        "logo": "",
 			"language" : "it",
 			"languages" : ["it"],
 			"log": {
@@ -184,7 +185,10 @@ function isConteined( obj , arr ) {
 			"initUrl": null,//applicationContext!= "/" ? (applicationContext+'/base/getGlobalData') : ('/base/getGlobalData');
 			"serverContext": applicationContext,
 			"backendPath": applicationContext,
-			"authorizationEnvironment": "test",
+	     	"authorization": {
+				"environment":"test",
+				"service":"test"
+			},
 			"environments": {
 					"test" : "test",
 					"prod" : "prod",
@@ -233,62 +237,80 @@ function isConteined( obj , arr ) {
     //Load specific application configuration merging into defualt value
     var d = jQuery.Deferred();	    
     jQuery.ajax({
-		url: applicationPath + 'config.json', dataType: "json", timeout: TIMEOUT
-	}).done( function( data, textStatus, jqXHR ){			
-		if (typeof data !== 'undefined'){			
-			if (typeof data.modules !== 'undefined'){
-				d.notify("Moduli specifici da caricare :"+ JSON.stringify(data.modules));
-				modules  = mergeJsonArray(modules ,  data.modules); //
-				//platform_modules = jQuery.extend( [], platform_modules ,  data.platform_modules );
-			}
-			if (typeof data.languages !== 'undefined' && data.languages.length>0){
-				conf.languages = data.languages;
-			}
-			if (typeof data.language !== 'undefined'){
-				conf.language = data.language;
-			}
-			if (typeof data.log !== 'undefined'){
-				if(typeof data.log.level !== 'undefined'){
-					conf.log.level = data.log.level;
+		url: applicationPath + 'environment.json', dataType: "json", timeout: TIMEOUT
+	}).done( function( data, textStatus, jqXHR ){	
+		if (typeof data !== 'undefined' && typeof data.environment !== 'undefined'){			
+		    conf.environments = data.environments;
+		    conf.environment = data.environment;
+			jQuery.ajax({
+				url: applicationPath + 'config.'+ data.environment +'.json', dataType: "json", timeout: TIMEOUT
+			}).done( function( data, textStatus, jqXHR ){			
+				if (typeof data !== 'undefined'){			
+					if (typeof data.modules !== 'undefined'){
+						d.notify("Moduli specifici da caricare :"+ JSON.stringify(data.modules));
+						modules  = mergeJsonArray(modules ,  data.modules); //
+						//platform_modules = jQuery.extend( [], platform_modules ,  data.platform_modules );
+					}		
+					if (typeof data.languages !== 'undefined' && data.languages.length>0){
+						conf.languages = data.languages;
+					}
+					if (typeof data.language !== 'undefined'){
+						conf.language = data.language;
+					}
+					if (typeof data.log !== 'undefined'){
+						if(typeof data.log.level !== 'undefined'){
+							conf.log.level = data.log.level;
+						}
+						if(typeof data.log.whiteList !== 'undefined'){
+							conf.log.whiteList = data.log.whiteList;
+						}				
+					}
+					if (typeof data.serverContext !== 'undefined'){				
+						conf.serverContext = data.serverContext;
+					}
+					if (typeof data.backendPath !== 'undefined'){				
+						conf.backendPath = data.backendPath;
+					}
+					if (typeof data.server_name !== 'undefined'){				
+						conf.server_name = data.server_name;
+						conf.server_name = conf.server_name.replace(/\/+$/, '');
+					}
+					if (typeof data.initUrl !== 'undefined'){
+						conf.initUrl = data.initUrl;
+					}
+					if (typeof data.timeout !== 'undefined'){
+						TIMEOUT = data.timeout;
+					}
+					if (typeof data.environments !== 'undefined'){
+						conf.environments = data.environments;
+					}
+					if (typeof data.environment !== 'undefined'){
+						conf.environment = data.environment;
+					}
+					if (typeof data.authorization !== 'undefined'){
+						conf.authorization = data.authorization;
+					}
+					if (typeof data.cookie !== 'undefined'){
+						cookie = data.cookie;
+					}
+					if (typeof data.logo !== 'undefined'){
+						conf.logo = data.logo;
+					}
+				} else {
+					d.notify("File di configurazione corrotto: "+ JSON.stringify(data));
 				}
-				if(typeof data.log.whiteList !== 'undefined'){
-					conf.log.whiteList = data.log.whiteList;
-				}				
-			}
-			if (typeof data.serverContext !== 'undefined'){				
-				conf.serverContext = data.serverContext;
-			}
-			if (typeof data.backendPath !== 'undefined'){				
-				conf.backendPath = data.backendPath;
-			}
-			if (typeof data.server_name !== 'undefined'){				
-				conf.server_name = data.server_name;
-				conf.server_name = conf.server_name.replace(/\/+$/, '');
-			}
-			if (typeof data.initUrl !== 'undefined'){
-				conf.initUrl = data.initUrl;
-			}
-			if (typeof data.timeout !== 'undefined'){
-				TIMEOUT = data.timeout;
-			}
-			if (typeof data.environments !== 'undefined'){
-				conf.environments = data.environments;
-			}
-			if (typeof data.environment !== 'undefined'){
-				conf.environment = data.environment;
-			}
-			if (typeof data.authorizationEnvironment !== 'undefined'){
-				conf.authorizationEnvironment = data.authorizationEnvironment;
-			}
-			if (typeof data.cookie !== 'undefined'){
-				cookie = data.cookie;
-			}
+				d.resolve();	
+			}).fail( function( jqXHR, textStatus, errorThrown ){
+				d.notify("Errore nel caricamento del file di configurazione");
+				d.resolve();
+			});
 		} else {
-			d.notify("File di configurazione corrotto: "+ JSON.stringify(data));
+			d.notify("File degli ambienti corrotto: "+ JSON.stringify(data));
+			d.resolve();
 		}
-		d.resolve();	
+		
 	}).fail( function( jqXHR, textStatus, errorThrown ){
-		d.notify("Nessun modulo specifico da caricare");
+		d.notify("Errore nel caricamento del file degli ambienti");
 		d.resolve();
 	});
     
@@ -447,16 +469,16 @@ function bootstrap(){
 		jQuery.ajax({
 			url: path + module +'/config/resources.json', dataType: "json", timeout: TIMEOUT
 		}).done( function( data, textStatus, jqXHR ){						
-			d.notify('Carciamento del modulo '+ module + ' in corso...');
+			d.notify('Caricamento del modulo '+ module + ' in corso...');
 			//d.resolve({"data":data,"module":module});	
-			//console.log('Carciamento del modulo '+ module + ' in corso...');
+			//console.log('Caricamento del modulo '+ module + ' in corso...');
 			loadModuleResources( module ,data , path).done( function( data, textStatus, jqXHR ){	
-				d.notify('Carciamento del modulo '+ module + ' eseguito con successo');				
+				d.notify('Caricamento del modulo '+ module + ' eseguito con successo');				
 //				setTimeout(function(){
 				d.resolve();//{"data":data,"module":module}
 //				},3000);
 			}).fail( function( jqXHR, textStatus, errorThrown ){
-				d.notify('Carciamento del modulo '+ module + ' terminato con errore');
+				d.notify('Caricamento del modulo '+ module + ' terminato con errore');
 				d.reject();//{"data":null,"module":module, "error":errorThrown}
 			});
 		}).fail( function( jqXHR, textStatus, errorThrown ){			

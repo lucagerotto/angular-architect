@@ -1,0 +1,30 @@
+{
+	"site" : {
+	
+		"sidebar" : {
+			"description" : "site"
+		},
+		
+		"breadcrumbs" : {
+			"/site"  : "site"
+		},	
+		
+	  	"title": {
+	  		"dashboard" : "Angular architect"
+	  	},
+	  	
+	  	"nav": {  		
+	  	},
+	  	
+	  	"field" : {	  	
+	  	},
+	  	
+	  	"placeholder" : {
+	  	},
+	  	
+	  	"error" : {
+	  		"err0001": "Esiste già una riga con lo stesso id"
+	  	}
+	  		  
+	}
+}

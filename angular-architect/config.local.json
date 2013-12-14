@@ -1,5 +1,5 @@
 {
-    "modules"   : [],
+    "modules"   : ["site"],
     "language"  : "it",
     "languages" : ["it"],
     "log": {
@@ -10,13 +10,6 @@
     "initUrl": null,
     "serverContext": "/",
     "backendPath": "",
-    "authorizationEnvironment": "test",
-    "environments": {
-        "test" : "test",
-        "prod" : "prod",
-        "stag" : "stag"
-    },
-    "environment": "test",
     "cookie" : {
         "authorization" : {
             "name" : "session"
@@ -29,5 +22,9 @@
             "domain" : ".angular-architect.it",
             "ttl"    : -1
         }
+    },
+     "authorization":{
+        "service": null,
+        "environment":"test"
     }
 }

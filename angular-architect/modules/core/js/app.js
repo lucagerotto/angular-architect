@@ -65,6 +65,14 @@ angular.module('core').run(['$compile','$rootScope','$routeParams', '$location',
 	var log = logFactory('run');
 	log.debug('run');
 	
+	$rootScope.$on("$routeChangeStart", function (event, next, current) {
+        authentication.isUserLogged().then(function( path ){
+        	if ( path != null ) {
+                $location.path( path );
+            }	
+        });		
+    });
+	
 //	Attiva lo spinner finché ci sono  richieste http pendenti 
 	$rootScope.pendingRequests = $http.pendingRequests;
 	$rootScope.$watch( 'pendingRequests.length', function( newValue, oldValue ){

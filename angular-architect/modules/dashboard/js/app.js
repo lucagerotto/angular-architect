@@ -8,6 +8,6 @@ angular.module('dashboard',['core']);
  */
 angular.module('dashboard').config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 	var modulePath = getModulePath('dashboard'); 
-	$routeProvider.when( path.dashboard , {templateUrl: modulePath + 'dashboard/partials/dashboard.html', controller: 'dashboardCtrl' , context:'dashboard' , resolve: adminCtrl.resolve});
+	$routeProvider.when( path.dashboard , {templateUrl: modulePath + 'dashboard/partials/dashboardContainer.html', controller: 'dashboardCtrl' , context:'dashboard' , resolve: adminCtrl.resolve});
     $routeProvider.otherwise({redirectTo: path.dashboard});
 }]);

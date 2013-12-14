@@ -1,38 +1,41 @@
-angular.module('core').service("authentication", ["$q","$rootScope", "$cookies", "$http", "$location", "logFactory", "commons", "notice",
-                                               function($q, $rootScope, $cookies, $http, $location, logFactory, commons, notice){	
+angular.module('core').service("authentication", ["$q","$rootScope", "$cookies", "$http", "$location", "logFactory", "commons", "notice","Base64",
+                                               function($q, $rootScope, $cookies, $http, $location, logFactory, commons, notice,Base64){	
 	var log = logFactory('authentication');
-	//var user = $rootScope.user || {};
 		
-	var logout = function(){				
-		log.debug("logout...");
-		//startSpinner();
-		//$rootScope.user = {}; //user;		
-		//$rootScope.loggedUser = false;
+	var logoutCore = function(){
 		commons.set("loggedUser", false);
 		commons.set("user",{});
 		
 		removeCookie(cookie.authorization.name, cookie.authorization.domain, cookie.authorization.path);
 		delete $cookies[cookie.authorization.name];
 		delete $cookies[cookie.backUrl.name];		
+	};
 		
-		$location.path( path.login );		
-		if(!$rootScope.$$phase) {			
-			$rootScope.$apply();
-		}
+	var logout = function(){
+		log.debug("logout...");
+		var d = $q.defer();
+		logoutCore();
+		d.resolve(path.login);
+		return d.promise;
 	};
 	
 	function addNotice( collection , type ){
-		type = type.replace(/s$/, "");
+		typ = type.replace(/s$/, "");
 		angular.forEach( collection , function( message, field ){	
-			//angular.forEach( messages , function( message ){
-				notice.add( type, message.type, [], undefined , message.message);
-			//});
+			if (angular.isArray(message)){
+				angular.forEach( message , function( m ){					
+					notice.add( typ, m.code, m.args, field , m.value);
+				});
+			}else {
+				notice.add( typ, message.type, [], undefined , message.message);
+			}			
 		});	
 	};
 	
 	var removeCookie = function(name, domain, path) {
 	     document.cookie = name + "=" + ( ( path ) ? ";path=" + path : "") + ( ( domain ) ? ";domain=" + domain : "" ) + ";expires=Thu, 01-Jan-1970 00:00:01 GMT";
 	};	
+	
 	var getCookie = function (c_name){
 		var c_value = document.cookie;
 		var c_start = c_value.indexOf(" " + c_name + "=");
@@ -52,11 +55,15 @@ angular.module('core').service("authentication", ["$q","$rootScope", "$cookies",
 		}
 		return c_value;
 	};
+	
 	var readAuthorizationCookie = function(){
-		var name = cookie.authorization.name;
-		var c = $cookies[cookie.authorization.name];
+		var c = null;
+		if (angular.isDefined(cookie.authorization)){
+			var cookieAuthorizationName = cookie.authorization.name;
+			c = $cookies[ cookieAuthorizationName ];
 		if (angular.isUndefined(c)){
-			c = getCookie(name);	
+				c = getCookie( cookieAuthorizationName );	
+			}		
 		}		
 		return c;
 	};
@@ -73,7 +80,7 @@ angular.module('core').service("authentication", ["$q","$rootScope", "$cookies",
 	
 	var loginWithCookie = function( cookieValue ){
 		var cookieTokens = cookieValue.split('*');		
-		return login (undefined,undefined,false,cookieTokens[0],cookieTokens[1]);
+		return login (undefined,undefined,false,cookieTokens[0],cookieTokens[1]);			
 	};
 	
 	var login = function( username, password, remember, idUtente, displayName ){
@@ -81,86 +88,22 @@ angular.module('core').service("authentication", ["$q","$rootScope", "$cookies",
 		startSpinner();
 		notice.clear();
 		$rootScope.notice = notice.get();		
-		//var url = "http://connect.mondadori.it/doLogin";
-		//alert('login');
-	    var d = $q.defer();
-		if (conf.authorizationEnvironment === conf.environments.test){
 	    	
-			return $http.get('modules/login/mocks/admin.json',{ timeout : TIMEOUT }).success(function(data, status, headers, config) {
-				$cookies[ cookie.authorization.name ] = data.username;
-			    //user = data;
-				//commons.disableWaiterAll(); 				
-				//alert('utente caricato con successo: '+data.username);
-				
-				//$rootScope.user = data;
+	    var d = $q.defer();
+	    if (angular.isUndefined(conf.authorization) || angular.isUndefined(conf.authorization.service) || conf.authorization.service == null){	
+			$http.get('modules/login/mocks/admin.json',{ timeout : TIMEOUT }).success(function(data, status, headers, config) {
 				$cookies[ cookie.authorization.name ] = data.oldCookie.value;
 	    		commons.set("user",data);
 				commons.set("loggedUser", true);//$rootScope.loggedUser = true;
-	    		d.resolve(true);
 	    		log.debug('utente '+ data.username + ' logato con successo');
-				//log.debug('utente risulta loggato?: '+ $rootScope.loggedUser);
 				var urlRitorno = $cookies[ cookie.backUrl.name ];
-				$location.path( (urlRitorno && urlRitorno!=path.login) ? urlRitorno : path.dashboard );
-				if(!$rootScope.$$phase) {
-					$rootScope.$apply();
-				}
+				d.resolve( (urlRitorno && urlRitorno!=path.login) ? urlRitorno : path.dashboard );
 				stopSpinner();
 			}).error(function(data, status, headers, config) {
-				d.resolve(false);
 				log.error('erorre in fase di login: '+ status);				
-				logout();
-				//commons.disableWaiterAll();
+				d.resolve( logout() );
 				stopSpinner();
 			});
-			
-	    } else {
-	    	var connect = conf.connect[conf.authorizationEnvironment];
-	    	return $http.get( $rootScope.conf.server_name + $rootScope.conf.serverContext +'/connect/doLogin' ,{ 
-	    		timeout : TIMEOUT ,
-	    		params: { "username" : username, "password" : password, "remember" : remember ,"idUtente":idUtente,"displayName":displayName
-	    			//, "crc": conf.connect.crc , "area": connect.area , "applicazione": connect.applicazione
-	    		}
-	    	}).success(function(data, status, headers, config) {
-				//$cookies[ cookie.authorization.name ] = data.username;
-	    		if (angular.isUndefined(data) || angular.isUndefined(data.errors)){
-	    			notice.add( "error", "err_00000", [], undefined , "Si è verificato un problema in fase di login.");
-	    			stopSpinner();
-	    			d.resolve(false);
-	    		} else {
-		    		if (data.errors.length==0){
-		    			var user = data.profile;
-		    			user["username"] = data.profile.USERNAME;
-		    			//user["password"] = password;		    			
-		    			commons.set("user", user);//$rootScope.user =  data.profile;
-			    		$cookies[ cookie.authorization.name ] = data.oldCookie.value;
-			    		commons.set("loggedUser", true);//$rootScope.loggedUser = true;	    						
-			    		
-			    		//scrivo i cookie provenienti dal server
-			    		setServerCookie(data.oldCookie.value, remember);
-			    		
-						log.debug('utente '+ user.username + ' logato con successo');
-						
-						var urlRitorno = $cookies[ cookie.backUrl.name ];
-						$location.path( (urlRitorno && urlRitorno!=path.login) ? urlRitorno : path.dashboard );
-						if(!$rootScope.$$phase) {
-							$rootScope.$apply();
-						}
-						stopSpinner();	
-						d.resolve(true);
-		    		} else {	    		
-			    		addNotice( data.errors , "errors");
-			    		addNotice( data.warnings, "warnings");
-			    	    $rootScope.notice = notice.get();
-			    	    stopSpinner();
-						d.resolve(false);						
-		    		}
-	    		}
-			}).error(function(data, status, headers, config) {
-				d.resolve(false);
-				log.error('erorre in fase di login: '+ status);
-				logout();
-				stopSpinner();
-			});	    	
 	    }
 	    return d.promise;
 	};
@@ -172,29 +115,23 @@ angular.module('core').service("authentication", ["$q","$rootScope", "$cookies",
 		
 		isUserLogged : function(){
 			var d = $q.defer();
+			
 			var auth_cookie_value = readAuthorizationCookie();
 			var loggedUser = (typeof auth_cookie_value !== "undefined") && (auth_cookie_value !== "") && auth_cookie_value!= null;
 			log.debug('Cookie auth value = ' + auth_cookie_value);
 			var currentPath = $location.path();	
 			if ( !loggedUser ){
-				commons.set("loggedUser", false);//$rootScope.loggedUser = false;
+				commons.set("loggedUser", false);
 				if ( currentPath != path.login ){
 					$cookies[cookie.backUrl.name] = currentPath;
-					//alert('vai alla login: '+path.login+' da '+ currentPath);
-					//d.resolve($rootScope.loggedUser);
-					d.resolve(false);
-					$location.path( path.login );
-					if(!$rootScope.$$phase) {					
-						$rootScope.$apply();
-					}
 					stopSpinner();
+					d.resolve(path.login);					
 				} else {
 					log.debug('Non sei loggato e stai accedendo alla login');
-					d.resolve(false);
+					d.resolve(null);
 				}
 			} else {
 				var user = commons.get("user");
-				//Utente logato log.debug($rootScope.user);				
 				if ( (typeof user === "undefined") || (jQuery.isEmptyObject(user)) ){
 					log.debug('manca utente ma ho il cookie faccio login con il cookie: ' + auth_cookie_value);
 					$cookies[cookie.backUrl.name] = currentPath;					
@@ -204,13 +141,11 @@ angular.module('core').service("authentication", ["$q","$rootScope", "$cookies",
 					commons.set("loggedUser", true);//$rootScope.loggedUser = true;
 					delete $cookies[cookie.backUrl.name];
 					log.debug('Utente loggato : ' + user.username);
-					d.resolve(true);
 					//se sono logato e sto cercando di accedere alla schermata di login rimando alla dshboard
 					if ( currentPath == path.login ){
-						$location.path( path.dashboard );
-						if(!$rootScope.$$phase) {							
-							$rootScope.$apply();
-						}
+						d.resolve( path.dashboard );
+					} else {
+						d.resolve(null);
 					}
 				}
 			}
@@ -386,6 +321,19 @@ angular.module('core').service("notice", [ "$rootScope", "$http", "$compile", "c
 	var initial ='{"error":{},"warning":{},"success":{},"info":{},"debug":{}, "validation":{},"log":{} }';
 	var keepNotices = false;
 	var notice = angular.fromJson(initial);
+	var visualize = function(type){
+		if (angular.isUndefined(notice.display)){
+			notice['display'] = {};
+		}
+		if (angular.isDefined(type)){
+			notice['display'][type]  = true;
+		} else {
+			for( t in types ){
+				notice['display'][types[t]]  = true;
+			}
+		}
+	};
+	visualize();
 	
 	return {
 		set : function ( n , type ){
@@ -394,6 +342,7 @@ angular.module('core').service("notice", [ "$rootScope", "$http", "$compile", "c
 			}else{
 				notice = n;
 			}
+			visualize(type);
 		},
 		get : function( type ){
 			if (angular.isDefined(type)){
@@ -412,9 +361,11 @@ angular.module('core').service("notice", [ "$rootScope", "$http", "$compile", "c
 				} else {
 					notice = angular.fromJson(initial);
 				}
+				visualize(type);
 			}
 		},
 		add : function( type, code, args, field , originalMessage){
+			visualize(type);
 			if (!angular.isDefined(field)){
 				field = "global";
 			}			
@@ -482,7 +433,7 @@ angular.module('core').service("modals", [ "$rootScope", "$http", "$compile", "l
 		set('confirm',  onClickFunction);    	
 		set('args',  onClickFunctionArgs );
 		if (angular.isUndefined(template)){
-			template = "_/partials/confirmForm.html";    			
+			template = "core/partials/confirmForm.html";    			
 		}
 		set('template',  template );    		
 		set('data', "<div data-ng-include=\"'"+ template +"'\"></div>");		

@@ -1,0 +1,12 @@
+[	
+	{
+		"context"     : "site",
+		"description" : "site.sidebar.description",
+		"iconclass"   : "icon-signin",
+		"url"         : "#/site",
+		"closet"      : false,
+		"enabled"     : true,
+		"visible"     : false,
+		"position"    : 50
+	}
+]

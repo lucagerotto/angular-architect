@@ -1,0 +1,9 @@
+{
+ 	"environments": {
+        "test": "test",
+        "prod": "prod",
+        "stag": "stag",
+        "local" : "local"
+    },
+    "environment": "local"
+}

@@ -1104,6 +1104,7 @@ body.iframeView, body.iframeView .jazz-admin{
 
 .jazz-admin .validation{
 	color:#e9322d;
+	display:inline-block;
 }
 
 .jazz-admin textarea.ng-invalid-validation,
@@ -1121,7 +1122,11 @@ body.iframeView, body.iframeView .jazz-admin{
 .jazz-admin input[type="search"].ng-invalid-validation, 
 .jazz-admin input[type="tel"].ng-invalid-validation, 
 .jazz-admin input[type="color"].ng-invalid-validation, 
-.jazz-admin .uneditable-input.ng-invalid-validation {
+.jazz-admin .uneditable-input.ng-invalid-validation,
+.jazz-admin form.validationColors combobox.ng-invalid-validation,
+.jazz-admin form.validationColors combobox.ng-invalid-validation ul
+.jazz-admin form.validationColors .combobox.ng-invalid-validation,
+.jazz-admin form.validationColors .combobox.ng-invalid-validation ul {
 	 border-color: #e9322d;
   -webkit-box-shadow: 0 0 6px #f8b9b7;
      -moz-box-shadow: 0 0 6px #f8b9b7;
@@ -1130,23 +1135,38 @@ body.iframeView, body.iframeView .jazz-admin{
 
 .jazz-admin form.validationColors input:valid, 
 .jazz-admin form.validationColors textarea:valid, 
-.jazz-admin form.validationColors select:valid {
+.jazz-admin form.validationColors select:valid,
+.jazz-admin form.validationColors combobox.ng-valid,
+.jazz-admin form.validationColors .combobox.ng-valid ,
+.jazz-admin form.validationColors combobox.ng-valid ul,
+.jazz-admin form.validationColors .combobox.ng-valid ul{
 	border-color: #3D6;
 	-webkit-box-shadow: 0 0 6px #51FC10;
 	-moz-box-shadow: 0 0 6px #f8b9b7;
 	box-shadow: 0 0 6px #C5FF9E;
 	border-left-width: 10px;
 }
+.jazz-admin form.validationColors combobox.ng-valid ul,
+.jazz-admin form.validationColors .combobox.ng-valid ul{
+	border-left-width: 1px;
+}
 .jazz-admin form.validationColors input:invalid, 
 .jazz-admin form.validationColors textarea:invalid, 
-.jazz-admin form.validationColors select:invalid {
+.jazz-admin form.validationColors select:invalid,
+.jazz-admin form.validationColors combobox.ng-invalid,
+.jazz-admin form.validationColors .combobox.ng-invalid,
+.jazz-admin form.validationColors combobox.ng-invalid ul,
+.jazz-admin form.validationColors .combobox.ng-invalid ul {
  	border-color: #e9322d;
   	-webkit-box-shadow: 0 0 6px #f8b9b7;
     -moz-box-shadow: 0 0 6px #f8b9b7;
     box-shadow: 0 0 6px #f8b9b7;
 	border-left-width: 10px;
 }
-
+.jazz-admin form.validationColors combobox.ng-invalid ul,
+.jazz-admin form.validationColors .combobox.ng-invalid ul{
+	border-left-width: 1px;
+}
 /* tools */
 .jazz-admin .sidebar-socks-icon {
     width:22px;

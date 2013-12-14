@@ -397,7 +397,7 @@ angular.module('core').directive('navigator', ['$q','$rootScope', '$routeParams'
 			    
 			   var breadcrumbsTemplate = $route.current.breadcrumbs;
 				if (angular.isUndefined(breadcrumbsTemplate)){
-					breadcrumbsTemplate = '_/partials/breadcrumbs.html';
+					breadcrumbsTemplate = 'core/partials/breadcrumbs.html';
 				}
 				lastScope.breadcrumbsTemplate = breadcrumbsTemplate;				
 
@@ -503,7 +503,7 @@ angular.module('core').directive('navigator', ['$q','$rootScope', '$routeParams'
 					if (angular.isDefined(menu) && menu!=null){
 						var closet = menu.closet;
 						if (typeof closet !== 'undefined'){
-							var navTemplate = "_/partials/nav.html";//navigatore con breadcrumbs e inclusione del sottomenu
+							var navTemplate = "core/partials/nav.html";//navigatore con breadcrumbs e inclusione del sottomenu
 							if (typeof closet.template !== 'undefined'){			
 								navTemplate = $rootScope.modulePath + $rootScope.context + closet.template;
 							}						
@@ -1015,6 +1015,7 @@ angular.module('core').directive('validation',['$parse','$q','$sniffer','$rootSc
 	    		//override della funzione di angular per la gestione del cambio valore sulla vista di un ng-model
 	    		//per gestire i parser con promise
 	    		modelCtrl.$setViewValue = function(value) {
+	    			    e.nextAll("."+ validationType).remove();
 	    			 	modelCtrl.$viewValue = value;
 		    	        // change to dirty
 		    	        if (modelCtrl.$pristine) {
@@ -1068,8 +1069,8 @@ angular.module('core').directive('validation',['$parse','$q','$sniffer','$rootSc
 	                		});
     	    		},2000);
 	    			/**/
-	    	    	bindResourceCtrl.validate( name ).then( function( r ){
-	    	    			var validationErrors = notice.get('validation');
+	    	    	bindResourceCtrl.validate( name, value ).then( function( r ){
+	    	    			var validationErrors = notice.get(validationType);
 	                		if( angular.isDefined(validationErrors) && validationErrors[name] ){
 	                			e.after('<span class="'+ validationType +'">'+  validationErrors[name] +'</span>');
 	                			modelCtrl.$setValidity(validationType, false);
@@ -1101,14 +1102,14 @@ angular.module('core').directive('validation',['$parse','$q','$sniffer','$rootSc
 		    	      var promise = d.promise;	
 		    	      d.resolve(value);
 	    		      
-	    		      while(idx>=0) {
+	    		      while(idx>0) {
 	    		       // value = formatters[idx](value); non va bene se sono promise	    		    	  
 	    		    	  (function( idx, value ){
 			    	        	promise = promise.then(function( res ){ 
 			    	        		value = res;
 			    	        		return formatters[idx](value);
 			    	        	});
-		    	        	}( idx--, value ));
+		    	        	}( --idx, value ));
 	    		    	  
 	    		      }
 	    		      promise.then( function(value){
@@ -1125,10 +1126,8 @@ angular.module('core').directive('validation',['$parse','$q','$sniffer','$rootSc
 	    		
 	    		
 	    	    e.bind('blur', function(event) {
-	    	    	if (modelCtrl.$viewValue !== value) {
-	    	    		 e.nextAll("."+ validationType).remove();	    	    	
+	    	    	if (modelCtrl.$viewValue !== value || (angular.isUndefined(value) && angular.isDefined(attrs.required))) {
 		    	    	 var value = trim( e.val() );
-		    	    	 
 	    	    	      scope.$apply(function() {
 	    	    	    	  modelCtrl.$setViewValue(value);//setta dirty=true e pristine=false nel controller del modello invoca i parser sul valore e quindi lo rende come variabile nello scope, invoca i $viewChangeListeners
 	    	    	      });

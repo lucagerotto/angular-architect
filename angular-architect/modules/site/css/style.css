@@ -1,0 +1,20 @@
+/* write here module's style */
+.login-form{
+	border-radius:12px;
+}
+.login-form h1{
+	font-size:36px;
+	font-family:sans-serif;
+	color:#Ca4645;
+}
+.login-form h1 img{
+	width:36px;
+    margin: -4px -4px 0px 0px;
+}
+.jazz-admin .login-form .form-horizontal .controls{
+	margin:0px auto;
+	text-align:center;
+}
+.jazz-admin .login-form .form-horizontal .controls .btn{
+	width:50%;
+}
